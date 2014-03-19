@@ -1,0 +1,27 @@
+<h1>Listing oks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oks.each do |ok| %>
+      <tr>
+        <td><%= ok.name %></td>
+        <td><%= link_to 'Show', ok %></td>
+        <td><%= link_to 'Edit', edit_ok_path(ok) %></td>
+        <td><%= link_to 'Destroy', ok, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ok', new_ok_path %>
